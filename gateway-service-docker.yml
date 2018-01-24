@@ -15,10 +15,11 @@ zuul:
   routes:
     student-service:
       contextPath: student-service/**
-      url: http://student-service:7000
+      serviceId: student-service
       stripPrefix: false
 
     rating-service:
       contextPath: rating-service/**
-      url: http://rating-service:5000
+      # url: http://rating-service:5000
+      serviceId: rating-service
       stripPrefix: false
