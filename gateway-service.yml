@@ -9,3 +9,19 @@ eureka:
 ribbon:
   eureka:
     enabled: false
+
+zuul:
+  # sensitive-headers: Authorization
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    student-service:
+      contextPath: /student-service/**
+      serviceId: student-service
+
+    rating-service:
+      contextPath: /rating-service/**
+      serviceId: rating-service
