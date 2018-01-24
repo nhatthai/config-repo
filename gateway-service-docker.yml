@@ -16,7 +16,12 @@ zuul:
     student-service:
       path: /student-service/**
       serviceId: student-service
-
+      stripPrefix: false
+      ribbon:
+        eureka:
+          enabled: false
+            listOfServers: student-service:7000
     rating-service:
       path: /rating-service/**
       serviceId: rating-service
+      stripPrefix: false
