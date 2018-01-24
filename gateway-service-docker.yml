@@ -14,9 +14,9 @@ zuul:
 
   routes:
     student-service:
-      path: student-service/**
+      path: /student-service/**
       serviceId: student-service
 
     rating-service:
-      path: rating-service/**
+      path: /rating-service/**
       serviceId: rating-service
