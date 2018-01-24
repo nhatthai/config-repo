@@ -1,13 +1,24 @@
-spring:
-  application:
-    name: gateway-service
-
-server:
-  port: 8765
-
 eureka:
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://eureka-service:8761/eureka
+
+zuul:
+  sensitive-headers: Authorization
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    student-service:
+      contextPath: /student-service/**
+      url: http://student-service:7000
+      stripPrefix: false
+
+    rating-service:
+      contextPath: /rating-service/**
+      url: http://rating-service:5000
+      stripPrefix: false
