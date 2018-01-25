@@ -6,7 +6,7 @@ eureka:
       defaultZone: http://eureka-service:8761/eureka
 
 zuul:
-  # sensitive-headers: Authorization
+  sensitive-headers: Authorization
   ignoredServices: '*'
   host:
     connect-timeout-millis: 20000
@@ -15,11 +15,10 @@ zuul:
   routes:
     student-service:
       path: /student-service/**
-      serviceId: student-service
       url: http://student-service:7000
-      stripPrefix: false
+      stripPrefix: True
 
     rating-service:
       path: /rating-service/**
-      serviceId: rating-service
-      stripPrefix: false
+      url: http://rating-service:5000
+      stripPrefix: True
