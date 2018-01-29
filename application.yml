@@ -25,4 +25,4 @@ spring:
 
   sleuth:
     sampler:
-      percentage: 100
+      percentage: 0.99
