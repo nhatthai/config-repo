@@ -8,10 +8,16 @@ eureka:
 logging:
   pattern:
     console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}] [%15.15t] %-40.40logger{39}: %m%n'
-
+    file: '%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n'
   level:
+    root: info
+    example:
+      service: error
     org:
       springframework: info
+
+  path: logs
+  file: ${logging.path}/log.log
 
 spring:
   zipkin:
