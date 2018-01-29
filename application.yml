@@ -22,3 +22,7 @@ logging:
 spring:
   zipkin:
     baseUrl: http://zipkin-server:9411
+
+  sleuth:
+    sampler:
+      percentage: 100
